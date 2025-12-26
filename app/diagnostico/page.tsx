@@ -26,9 +26,26 @@ export default function DiagnosticoPage() {
 
   const [submitted, setSubmitted] = useState(false)
 
-  const handleSubmit = (e: React.FormEvent) => {
+const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    console.log("[v0] Form submitted:", formData)
+    const subject = encodeURIComponent(`Contacto: ${formData.asunto}`)
+    const body = encodeURIComponent(
+      `Nombre: ${formData.nombre}\n` +
+        `Email: ${formData.email}\n` +
+        `Teléfono: ${formData.telefono}\n` +
+        `Empresa: ${formData.empresa || "No especificada"}\n\n` +
+        `Industria: ${formData.industria}\n\n` +
+        `Número de empleados:\n${formData.empleados}`,
+        `Principales Desafios: \n${formData.desafios}`,
+        `Objetivos: \n${formData.objetivos}`
+    )
+
+    const mailtoLink = `mailto:clientes@a-zesoria.com?subject=${subject}&body=${body}`
+
+    // Open user's email client with pre-filled data
+    window.location.href = mailtoLink
+
+    // Show success message
     setSubmitted(true)
   }
 
@@ -52,6 +69,7 @@ export default function DiagnosticoPage() {
           <div className="inline-flex items-center justify-center w-20 h-20 rounded-2xl bg-gradient-to-br from-accent to-accent/80 shadow-xl mb-4 animate-in zoom-in duration-500">
             <Brain className="w-10 h-10 text-background" />
           </div>
+          <br/>
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-green-500/10 border border-green-500/20">
             <Award className="w-4 h-4 text-green-500" />
             <span className="text-sm font-medium text-green-500">100% Gratuito - Sin Compromiso</span>
