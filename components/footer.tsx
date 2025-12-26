@@ -7,7 +7,7 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
           {/* Company Info */}
           <div className="space-y-4">
-            <h3 className="text-2xl font-bold">A-ZESORIA</h3>
+            <h3 className="text-2xl font-bold font-display">A-ZESORIA</h3>
             <p className="text-sm text-primary-foreground/80 leading-relaxed">
               Consultoría industrial especializada en diagnóstico, localización e implementación de plantas con IA.
             </p>
@@ -71,9 +71,11 @@ export function Footer() {
           <div className="space-y-4">
             <h4 className="font-semibold text-lg">Contacto</h4>
             <ul className="space-y-2 text-sm text-primary-foreground/80">
-              <li>Ciudad de México, México</li>
-              <li>+52 (55) 1234-5678</li>
-              <li>contacto@a-zesoria.com</li>
+              <li>Av Acueducto 675A</li>
+              <li>Puerta de Hierro</li>
+              <li>Zapopan, Jal. 45600</li>
+              <li>+52 (33) 1166-2772</li>
+              <li>clientes@a-zesoria.com</li>
             </ul>
           </div>
         </div>

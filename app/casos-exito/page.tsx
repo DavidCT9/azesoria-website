@@ -24,7 +24,7 @@ export default function CasosExitoPage() {
       testimonio:
         "El diagnóstico con IA de A-ZESORIA nos permitió identificar problemas que nunca hubiéramos detectado manualmente. La mejora en eficiencia superó todas nuestras expectativas.",
       puesto: "Director de Operaciones",
-      imagen: "/professional-business-analytics-dashboard-with-dat.jpg",
+      imagen: "https://revistadigital.mx/wp-content/uploads/2023/10/AN417_Automotriz_01.jpg",
     },
     {
       empresa: "Empresa de Logística y Distribución",
@@ -43,7 +43,7 @@ export default function CasosExitoPage() {
       testimonio:
         "El análisis de localización fue extraordinariamente detallado. La ubicación recomendada ha superado todas nuestras proyecciones de ahorro y eficiencia.",
       puesto: "VP de Operaciones",
-      imagen: "/strategic-geographic-map-with-location-pins-and-lo.jpg",
+      imagen: "https://www.beetrack.com/hubfs/logistica%20de%20distribucion%20de%20un%20producto.jpg",
     },
     {
       empresa: "Grupo Industrial Químico",
@@ -62,7 +62,7 @@ export default function CasosExitoPage() {
       testimonio:
         "La experiencia de A-ZESORIA en implementación de plantas fue fundamental. Logramos iniciar operaciones antes de lo planeado y con cero incidentes de seguridad.",
       puesto: "Gerente General de Proyecto",
-      imagen: "/upward-trending-business-growth-chart-with-product.jpg",
+      imagen: "https://images.unsplash.com/photo-1629447388369-760612337eff?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8aW5kdXN0cmlhJTIwcXUlQzMlQURtaWNhfGVufDB8fDB8fHww",
     },
   ]
 

@@ -26,7 +26,22 @@ export default function ContactoPage() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    console.log("[v0] Contact form submitted:", formData)
+    const subject = encodeURIComponent(`Contacto: ${formData.asunto}`)
+    const body = encodeURIComponent(
+      `Nombre: ${formData.nombre}\n` +
+        `Email: ${formData.email}\n` +
+        `Teléfono: ${formData.telefono}\n` +
+        `Empresa: ${formData.empresa || "No especificada"}\n\n` +
+        `Asunto: ${formData.asunto}\n\n` +
+        `Mensaje:\n${formData.mensaje}`,
+    )
+
+    const mailtoLink = `mailto:clientes@a-zesoria.com?subject=${subject}&body=${body}`
+
+    // Open user's email client with pre-filled data
+    window.location.href = mailtoLink
+
+    // Show success message
     setSubmitted(true)
   }
 
@@ -50,7 +65,9 @@ export default function ContactoPage() {
             <MessageSquare className="w-4 h-4 text-accent" />
             <span className="text-sm font-medium text-accent">Respuesta en menos de 24 horas</span>
           </div>
-          <h1 className="text-5xl md:text-7xl font-bold text-primary text-balance leading-tight">Contacto</h1>
+          <h1 className="text-5xl md:text-7xl font-bold text-primary text-balance leading-tight font-display">
+            Contacto
+          </h1>
           <p className="text-xl text-muted-foreground leading-relaxed text-pretty max-w-2xl mx-auto">
             Estamos listos para ayudarle a transformar su operación empresarial. Contáctenos hoy mismo.
           </p>
@@ -63,7 +80,7 @@ export default function ContactoPage() {
             <div className="lg:col-span-2 space-y-6">
               <div className="sticky top-24 space-y-6">
                 <div>
-                  <h2 className="text-3xl font-bold text-primary mb-2">Información de Contacto</h2>
+                  <h2 className="text-3xl font-bold text-primary mb-2 font-display">Información de Contacto</h2>
                   <p className="text-muted-foreground">Múltiples formas de comunicarnos con usted</p>
                 </div>
 
@@ -79,7 +96,7 @@ export default function ContactoPage() {
                           +52 (55) 1234-5678
                         </p>
                         <p className="text-sm text-muted-foreground hover:text-accent transition-colors cursor-pointer">
-                          +52 (55) 8765-4321
+                          {""}
                         </p>
                       </div>
                     </div>
@@ -93,7 +110,7 @@ export default function ContactoPage() {
                       <div className="space-y-2">
                         <h3 className="font-semibold text-foreground text-lg">Email</h3>
                         <p className="text-sm text-muted-foreground hover:text-accent transition-colors cursor-pointer">
-                          contacto@a-zesoria.com
+                          clientes@a-zesoria.com
                         </p>
                         <p className="text-sm text-muted-foreground hover:text-accent transition-colors cursor-pointer">
                           ventas@a-zesoria.com
@@ -110,11 +127,11 @@ export default function ContactoPage() {
                       <div className="space-y-2">
                         <h3 className="font-semibold text-foreground text-lg">Oficinas</h3>
                         <p className="text-sm text-muted-foreground leading-relaxed">
-                          Paseo de la Reforma 505
+                          Av Acueducto 675A
                           <br />
-                          Cuauhtémoc, 06500
+                          Puerta de Hierro
                           <br />
-                          Ciudad de México, CDMX
+                          Zapopan, Jal. 45600
                         </p>
                       </div>
                     </div>
@@ -146,7 +163,7 @@ export default function ContactoPage() {
                         <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center">
                           <Sparkles className="w-6 h-6 text-accent" />
                         </div>
-                        <h2 className="text-3xl font-bold text-primary">Envíenos un Mensaje</h2>
+                        <h2 className="text-3xl font-bold text-primary font-display">Envíenos un Mensaje</h2>
                       </div>
                       <p className="text-muted-foreground pl-15">
                         Complete el formulario y nuestro equipo le responderá en menos de 24 horas
@@ -275,7 +292,7 @@ export default function ContactoPage() {
                   <div className="inline-flex items-center justify-center w-24 h-24 rounded-full bg-green-500/10 mx-auto animate-in zoom-in duration-500">
                     <CheckCircle className="w-12 h-12 text-green-500" />
                   </div>
-                  <h2 className="text-4xl font-bold text-primary">¡Mensaje Enviado!</h2>
+                  <h2 className="text-4xl font-bold text-primary font-display">¡Mensaje Enviado!</h2>
                   <p className="text-lg text-muted-foreground max-w-md mx-auto leading-relaxed">
                     Gracias por contactarnos. Uno de nuestros especialistas se pondrá en contacto con usted en las
                     próximas 24 horas.
@@ -305,7 +322,7 @@ export default function ContactoPage() {
                   <MapPin className="w-8 h-8 text-background" />
                 </div>
                 <p className="text-lg font-semibold text-foreground">Encuéntrenos en</p>
-                <p className="text-xl font-bold text-primary">Paseo de la Reforma 505, CDMX</p>
+                <p className="text-xl font-bold text-primary font-display">Av Acueducto 675A, Zapopan, Jal.</p>
               </div>
             </div>
           </Card>

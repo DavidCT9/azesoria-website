@@ -40,12 +40,12 @@ export function CTASection() {
               <div className="flex flex-col md:flex-row items-center justify-center gap-6 text-white/80">
                 <div className="flex items-center gap-2">
                   <Phone className="w-5 h-5" />
-                  <span className="text-sm">+52 (55) 1234-5678</span>
+                  <span className="text-sm">+52 (33) 1166-2772</span>
                 </div>
                 <div className="hidden md:block w-px h-4 bg-primary-foreground/20"></div>
                 <div className="flex items-center gap-2">
                   <Mail className="w-5 h-5" />
-                  <span className="text-sm">contacto@a-zesoria.com</span>
+                  <span className="text-sm">clientes@a-zesoria.com</span>
                 </div>
               </div>
             </div>

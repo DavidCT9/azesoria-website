@@ -1,11 +1,16 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Inter, JetBrains_Mono } from "next/font/google"
+import { Inter, JetBrains_Mono, Poppins } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import "./globals.css"
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" })
 const jetBrainsMono = JetBrains_Mono({ subsets: ["latin"], variable: "--font-mono" })
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800", "900"],
+  variable: "--font-display",
+})
 
 export const metadata: Metadata = {
   title: "A-ZESORIA | Consultoría Industrial con IA - 30+ Años de Experiencia",
@@ -38,7 +43,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es">
-      <body className={`${inter.variable} ${jetBrainsMono.variable} font-sans antialiased`}>
+      <body className={`${inter.variable} ${jetBrainsMono.variable} ${poppins.variable} font-sans antialiased`}>
         {children}
         <Analytics />
       </body>

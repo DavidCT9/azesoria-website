@@ -1,5 +1,5 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Brain, MapPin, TrendingUp, ArrowRight } from "lucide-react"
+import { Brain, MapPin, TrendingUp, GitBranch } from "lucide-react"
 import Image from "next/image"
 
 const services = [
@@ -13,7 +13,7 @@ const services = [
       "Detección de desperdicios ocultos",
       "Recomendaciones basadas en datos",
     ],
-    image: "/professional-business-analytics-dashboard-with-dat.jpg",
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop",
   },
   {
     icon: MapPin,
@@ -21,7 +21,7 @@ const services = [
     description:
       "Diseñamos la ubicación óptima de sus instalaciones utilizando análisis geoespacial avanzado. Evaluamos proximidad a mercados, costos de transporte, disponibilidad de mano de obra y factores estratégicos para minimizar costos logísticos y maximizar eficiencia.",
     highlights: ["Análisis geoespacial con IA", "Optimización de rutas logísticas", "Evaluación de infraestructura"],
-    image: "/strategic-geographic-map-with-location-pins-and-lo.jpg",
+    image: "https://media.istockphoto.com/id/1094066304/es/vector/contorno-del-mapa-de-m%C3%A9xico-con-las-estrellas-y-l%C3%ADneas-resumen-marco-comunicaci%C3%B3n-concepto.jpg?s=612x612&w=0&k=20&c=X7FNa5Tm0vCWSiN8XndbYKxxHmO6Ql7tW0QI9SY5IBA=",
   },
   {
     icon: TrendingUp,
@@ -29,7 +29,7 @@ const services = [
     description:
       "Integramos soluciones de inteligencia artificial en sus procesos para automatizar decisiones y predecir escenarios operativos. Aumente su productividad hasta un 40% con tecnología de vanguardia.",
     highlights: ["Automatización inteligente", "Análisis predictivo en tiempo real", "Dashboard de KPIs estratégicos"],
-    image: "/upward-trending-business-growth-chart-with-product.jpg",
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop",
   },
 ]
 
@@ -38,7 +38,7 @@ export function ServicesSection() {
     <section id="servicios" className="py-24 px-4 relative z-10 accent-lines">
       <div className="container mx-auto">
         <div className="text-center space-y-4 mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-primary text-balance">
+          <h2 className="text-4xl md:text-5xl font-bold text-primary text-balance font-display">
             Servicios Clave para su Transformación Empresarial
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto text-pretty">
@@ -49,16 +49,12 @@ export function ServicesSection() {
         <div className="max-w-4xl mx-auto mb-16 p-8 bg-gradient-to-br from-card to-card/80 border-2 border-accent/20 rounded-xl shadow-lg backdrop-blur-sm">
           <div className="flex flex-col md:flex-row items-start gap-6">
             <div className="flex-shrink-0">
-              <div className="w-24 h-24 bg-gradient-to-br from-accent/20 to-accent/10 rounded-xl flex items-center justify-center border border-accent/30">
-                <div className="text-center">
-                  <div className="font-bold text-accent text-lg">A</div>
-                  <ArrowRight className="w-6 h-6 text-accent mx-auto my-px" />
-                  <div className="font-bold text-accent text-lg">Z</div>
-                </div>
+              <div className="w-24 h-24 bg-gradient-to-br from-accent/20 to-primary/10 rounded-xl flex items-center justify-center border border-accent/30">
+                <GitBranch className="w-12 h-12 text-accent" />
               </div>
             </div>
             <div className="flex-1">
-              <h3 className="text-2xl font-semibold text-primary mb-3">Análisis Factorial A-Z</h3>
+              <h3 className="text-2xl font-semibold text-primary mb-3 font-display">Análisis Factorial A-Z</h3>
               <p className="text-muted-foreground leading-relaxed">
                 Realizamos un <strong className="text-foreground">Análisis Factorial A-Z completo</strong> de su
                 operación: desde la recepción de materias primas hasta la entrega final. Evaluamos cada variable crítica
