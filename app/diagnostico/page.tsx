@@ -35,9 +35,9 @@ const handleSubmit = (e: React.FormEvent) => {
         `Teléfono: ${formData.telefono}\n` +
         `Empresa: ${formData.empresa || "No especificada"}\n\n` +
         `Industria: ${formData.industria}\n\n` +
-        `Número de empleados:\n${formData.empleados}`,
-        `Principales Desafios: \n${formData.desafios}`,
-        `Objetivos: \n${formData.objetivos}`
+        `Número de empleados:\n${formData.empleados}\n\n`+
+        `Principales Desafios: \n${formData.desafios}\n\n`+
+        `Objetivos: \n${formData.objetivos}`,
     )
 
     const mailtoLink = `mailto:clientes@a-zesoria.com?subject=${subject}&body=${body}`
