@@ -1,4 +1,5 @@
 import Link from "next/link"
+import Image from "next/image"
 
 export function Footer() {
   return (
@@ -7,6 +8,13 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
           {/* Company Info */}
           <div className="space-y-4">
+            <Image
+              src="/logo.svg"
+              alt="A-ZESORIA Logo"
+              width={180}
+              height={60}
+              className="h-12 w-auto mb-2 brightness-0 invert"
+            />
             <h3 className="text-2xl font-bold font-display">A-ZESORIA</h3>
             <p className="text-sm text-primary-foreground/80 leading-relaxed">
               Consultoría industrial especializada en diagnóstico, localización e implementación de plantas con IA.

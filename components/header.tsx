@@ -1,11 +1,13 @@
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
+import Image from "next/image"
 
 export function Header() {
   return (
     <header className="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-md border-b border-border">
       <nav className="container mx-auto px-4 py-4 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-2">
+          <Image src="/logo.svg" alt="A-ZESORIA Logo" width={160} height={50} className="h-10 w-auto" priority />
           <div className="text-2xl font-bold text-primary">A-ZESORIA</div>
         </Link>
 
