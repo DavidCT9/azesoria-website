@@ -55,14 +55,21 @@
   .display-title { @apply font-display tracking-[-0.045em]; }
 }
 
-.hero-stage::after { content: ""; position: absolute; inset: 0; pointer-events: none; background: radial-gradient(circle at 70% 40%, color-mix(in oklch, var(--accent) 14%, transparent), transparent 26rem); }
-.hero-orbit { position: absolute; border: 1px solid color-mix(in oklch, var(--accent) 38%, transparent); border-radius: 999px; transform: rotate(-22deg); animation: orbit-drift 16s ease-in-out infinite alternate; }
-.hero-orbit-one { width: 42rem; height: 15rem; right: -8rem; top: 5rem; }
-.hero-orbit-two { width: 34rem; height: 12rem; right: -3rem; top: 9rem; animation-delay: -5s; opacity: .55; }
-.hero-signal { position: absolute; height: 1px; width: 7rem; background: var(--accent); transform-origin: left; animation: signal-pulse 5s ease-in-out infinite; }
-.hero-signal-one { right: 17%; top: 28%; transform: rotate(-18deg); }
-.hero-signal-two { right: 10%; top: 64%; transform: rotate(17deg); animation-delay: -2s; }
-@keyframes orbit-drift { from { transform: translate3d(0, 0, 0) rotate(-22deg); } to { transform: translate3d(-2rem, 1rem, 0) rotate(-15deg); } }
-@keyframes signal-pulse { 0%, 100% { opacity: .2; scale: .75 1; } 50% { opacity: .9; scale: 1.2 1; } }
-@media (prefers-reduced-motion: reduce) { .hero-orbit, .hero-signal { animation: none; } }
+.hero-stage::after { content: ""; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(90deg, transparent 0 58%, color-mix(in oklch, var(--accent) 4%, transparent) 58% 58.1%, transparent 58.1%); }
+.hero-geometry { position: absolute; inset: 0; pointer-events: none; overflow: hidden; }
+.hero-geometry::before, .hero-geometry::after { content: ""; position: absolute; border: 1px solid color-mix(in oklch, var(--accent) 28%, transparent); transform: rotate(-28deg); animation: geometry-drift 18s ease-in-out infinite alternate; }
+.hero-geometry::before { width: 28rem; height: 28rem; right: -11rem; top: -9rem; }
+.hero-geometry::after { width: 17rem; height: 17rem; right: 8%; bottom: -10rem; opacity: .55; animation-delay: -7s; }
+.hero-node { position: absolute; width: .55rem; height: .55rem; background: var(--accent); animation: node-breathe 6s ease-in-out infinite; }
+.hero-node-one { right: 18%; top: 24%; }
+.hero-node-two { right: 31%; top: 49%; animation-delay: -2s; }
+.hero-node-three { right: 11%; bottom: 18%; animation-delay: -4s; }
+.hero-beam { position: absolute; height: 1px; background: color-mix(in oklch, var(--accent) 65%, transparent); transform-origin: left center; animation: beam-drift 10s ease-in-out infinite alternate; }
+.hero-beam-one { width: 10rem; right: 13%; top: 25%; transform: rotate(32deg); }
+.hero-beam-two { width: 7rem; right: 23%; top: 50%; transform: rotate(-18deg); animation-delay: -4s; }
+@keyframes geometry-drift { from { transform: translate3d(0, 0, 0) rotate(-28deg); } to { transform: translate3d(-1.5rem, 1rem, 0) rotate(-22deg); } }
+@keyframes node-breathe { 0%, 100% { opacity: .3; transform: scale(.8); } 50% { opacity: .9; transform: scale(1.2); } }
+@keyframes beam-drift { from { opacity: .2; transform: rotate(32deg) scaleX(.8); } to { opacity: .75; transform: rotate(28deg) scaleX(1); } }
+@media (max-width: 767px) { .hero-geometry { opacity: .55; } .hero-geometry::before { right: -15rem; top: 3rem; } .hero-beam-one { right: 4%; top: 20%; } .hero-beam-two { right: 10%; top: 60%; } }
+@media (prefers-reduced-motion: reduce) { .hero-geometry::before, .hero-geometry::after, .hero-node, .hero-beam { animation: none; } }
 

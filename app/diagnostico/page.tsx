@@ -9,7 +9,7 @@ import { Card } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
-import { Brain, CheckCircle, Clock, TrendingUp, Users, Sparkles, Award, Zap, Target } from "lucide-react"
+import { Brain, CheckCircle, Clock, TrendingUp, Users, Target } from "lucide-react"
 import { useState } from "react"
 
 export default function DiagnosticoPage() {
@@ -75,12 +75,9 @@ const handleSubmit = (e: React.FormEvent) => {
 
       <section className="py-16 px-4">
         <div className="container mx-auto max-w-6xl">
-          <div className="text-center mb-12 space-y-3">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/10 border border-accent/20">
-              <Sparkles className="w-4 h-4 text-accent" />
-              <span className="text-sm font-medium text-accent">Proceso Simple y Efectivo</span>
-            </div>
-            <h2 className="text-4xl font-bold text-primary">Cómo Funciona el Diagnóstico</h2>
+          <div className="mb-12 max-w-2xl space-y-3">
+            <p className="section-kicker">Una conversación en cuatro movimientos</p>
+            <h2 className="display-title text-4xl font-semibold text-primary">Cómo funciona el diagnóstico</h2>
           </div>
           <div className="grid md:grid-cols-4 gap-6">
             {[
@@ -106,24 +103,18 @@ const handleSubmit = (e: React.FormEvent) => {
                 icon: TrendingUp,
                 title: "Presentación",
                 description: "Reciba un reporte detallado con recomendaciones accionables",
-                color: "from-orange-500/20 to-red-500/20",
               },
             ].map((step, index) => (
               <Card
                 key={index}
-                className="relative border-y border-border p-6 text-center space-y-4 transition-colors group overflow-hidden"
+                className="relative border-t border-border p-6 pt-7 text-left space-y-4 transition-colors group"
               >
-                <div
-                  className={`absolute inset-0 bg-gradient-to-br ${step.color} opacity-0 group-hover:opacity-100 transition-opacity`}
-                />
                 <div className="relative z-10">
-                  <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-accent/10 group-hover:bg-accent/20 mx-auto mb-4 transition-colors">
-                    <step.icon className="w-8 h-8 text-accent" />
+                  <div className="mb-5 flex items-center gap-3">
+                    <span className="font-display text-3xl font-semibold text-accent">0{index + 1}</span>
+                    <span className="h-px w-10 bg-border" />
                   </div>
-                  <div className="absolute -top-2 -right-2 w-10 h-10 rounded-full bg-primary flex items-center justify-center shadow-lg">
-                    <span className="text-lg font-bold text-primary-foreground">{index + 1}</span>
-                  </div>
-                  <h3 className="font-semibold text-foreground text-lg mb-2">{step.title}</h3>
+                  <h3 className="font-display text-xl font-semibold text-foreground mb-2">{step.title}</h3>
                   <p className="text-sm text-muted-foreground leading-relaxed">{step.description}</p>
                 </div>
               </Card>
@@ -139,8 +130,8 @@ const handleSubmit = (e: React.FormEvent) => {
               <div className="space-y-8">
                 <div className="text-center space-y-4">
                   <div className="inline-flex items-center gap-3 mb-4">
-                    <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center">
-                      <Zap className="w-6 h-6 text-accent" />
+                    <div className="flex h-10 w-10 items-center justify-center border border-accent text-accent" aria-hidden="true">
+                      <span className="h-2 w-2 bg-accent" />
                     </div>
                     <h2 className="text-3xl md:text-4xl font-bold text-primary">Solicitar Diagnóstico Gratuito</h2>
                   </div>
@@ -320,12 +311,9 @@ const handleSubmit = (e: React.FormEvent) => {
 
       <section className="py-16 px-4">
         <div className="container mx-auto max-w-6xl">
-          <div className="text-center mb-12 space-y-3">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/10 border border-accent/20">
-              <Target className="w-4 h-4 text-accent" />
-              <span className="text-sm font-medium text-accent">Análisis Integral Incluido</span>
-            </div>
-            <h2 className="text-4xl font-bold text-primary">Qué Incluye el Diagnóstico</h2>
+          <div className="mb-12 max-w-2xl space-y-3">
+            <p className="section-kicker">El mapa que se lleva</p>
+            <h2 className="display-title text-4xl font-semibold text-primary">Qué incluye el diagnóstico</h2>
           </div>
           <div className="grid md:grid-cols-3 gap-8">
             {[
@@ -365,16 +353,14 @@ const handleSubmit = (e: React.FormEvent) => {
             ].map((section, index) => (
               <Card
                 key={index}
-                className="relative p-6 space-y-4 border-2 hover:border-accent/30 hover:shadow-xl transition-all duration-300 group overflow-hidden"
+                className="relative border-t border-border p-6 pt-7 space-y-4 transition-colors group"
               >
-                <div
-                  className={`absolute inset-0 bg-gradient-to-br ${section.color} opacity-0 group-hover:opacity-100 transition-opacity`}
-                />
                 <div className="relative z-10">
-                  <div className="inline-flex items-center justify-center w-14 h-14 rounded-xl bg-accent/10 group-hover:bg-accent/20 mb-4 transition-colors">
-                    <section.icon className="w-7 h-7 text-accent" />
+                  <div className="mb-5 flex items-center gap-3">
+                    <span className="h-2 w-2 bg-accent" />
+                    <span className="eyebrow">{String(index + 1).padStart(2, "0")}</span>
                   </div>
-                  <h3 className="text-xl font-semibold text-foreground mb-4">{section.title}</h3>
+                  <h3 className="font-display text-xl font-semibold text-foreground mb-4">{section.title}</h3>
                   <ul className="space-y-3">
                     {section.items.map((item, idx) => (
                       <li key={idx} className="flex items-start gap-2">
