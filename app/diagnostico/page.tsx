@@ -9,7 +9,7 @@ import { Card } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
-import { Brain, CheckCircle, Clock, TrendingUp, Users, Target } from "lucide-react"
+import { Brain, CheckCircle, Clock, TrendingUp, Users } from "lucide-react"
 import { useState } from "react"
 
 export default function DiagnosticoPage() {
@@ -315,12 +315,12 @@ const handleSubmit = (e: React.FormEvent) => {
             <p className="section-kicker">El mapa que se lleva</p>
             <h2 className="display-title text-4xl font-semibold text-primary">Qué incluye el diagnóstico</h2>
           </div>
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="border-y border-border">
             {[
               {
                 title: "Análisis de Eficiencia",
-                icon: TrendingUp,
-                color: "from-blue-500/20 to-cyan-500/20",
+                signal: "01 / OPERACIÓN",
+                intro: "Primero entendemos dónde se pierde tiempo, margen o claridad.",
                 items: [
                   "Evaluación de procesos críticos",
                   "Identificación de cuellos de botella",
@@ -330,8 +330,8 @@ const handleSubmit = (e: React.FormEvent) => {
               },
               {
                 title: "Oportunidades de IA",
-                icon: Brain,
-                color: "from-purple-500/20 to-pink-500/20",
+                signal: "02 / CRITERIO",
+                intro: "Después separamos la tecnología útil de la que solo suena bien.",
                 items: [
                   "Casos de uso específicos de IA",
                   "Estimación de ROI por iniciativa",
@@ -341,8 +341,8 @@ const handleSubmit = (e: React.FormEvent) => {
               },
               {
                 title: "Plan de Acción",
-                icon: Target,
-                color: "from-emerald-500/20 to-teal-500/20",
+                signal: "03 / PRÓXIMO PASO",
+                intro: "El resultado es una ruta que su equipo puede empezar a ejecutar.",
                 items: [
                   "Recomendaciones priorizadas",
                   "Timeline de implementación",
@@ -350,27 +350,22 @@ const handleSubmit = (e: React.FormEvent) => {
                   "KPIs de seguimiento",
                 ],
               },
-            ].map((section, index) => (
-              <Card
-                key={index}
-                className="relative border-t border-border p-6 pt-7 space-y-4 transition-colors group"
-              >
-                <div className="relative z-10">
-                  <div className="mb-5 flex items-center gap-3">
-                    <span className="h-2 w-2 bg-accent" />
-                    <span className="eyebrow">{String(index + 1).padStart(2, "0")}</span>
-                  </div>
-                  <h3 className="font-display text-xl font-semibold text-foreground mb-4">{section.title}</h3>
-                  <ul className="space-y-3">
-                    {section.items.map((item, idx) => (
-                      <li key={idx} className="flex items-start gap-2">
-                        <CheckCircle className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" />
-                        <span className="text-sm text-muted-foreground">{item}</span>
-                      </li>
-                    ))}
-                  </ul>
+            ].map((section) => (
+              <article key={section.signal} className="group grid gap-6 border-b border-border py-8 last:border-b-0 md:grid-cols-[.7fr_1fr_1.1fr] md:items-start md:gap-10">
+                <div>
+                  <p className="eyebrow">{section.signal}</p>
+                  <h3 className="mt-3 font-display text-2xl font-semibold tracking-[-0.035em] text-foreground">{section.title}</h3>
                 </div>
-              </Card>
+                <p className="max-w-sm text-base leading-7 text-muted-foreground">{section.intro}</p>
+                <ul className="grid gap-x-6 gap-y-3 sm:grid-cols-2">
+                  {section.items.map((item) => (
+                    <li key={item} className="flex items-start gap-3 text-sm leading-6 text-muted-foreground">
+                      <span className="mt-2 h-1.5 w-1.5 shrink-0 bg-accent" aria-hidden="true" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </article>
             ))}
           </div>
         </div>
