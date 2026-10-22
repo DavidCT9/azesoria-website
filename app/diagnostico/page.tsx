@@ -345,7 +345,7 @@ const handleSubmit = (e: React.FormEvent) => {
                 icon: Brain,
                 color: "from-purple-500/20 to-pink-500/20",
                 items: [
-                  "Casos de uso espec��ficos de IA",
+                  "Casos de uso específicos de IA",
                   "Estimación de ROI por iniciativa",
                   "Roadmap de implementación",
                   "Análisis de viabilidad técnica",
