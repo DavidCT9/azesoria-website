@@ -28,7 +28,7 @@ export default function DiagnosticoPage() {
 
 const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    const subject = encodeURIComponent(`Contacto: ${formData.asunto}`)
+    const subject = encodeURIComponent("Solicitud de diagnóstico estratégico")
     const body = encodeURIComponent(
       `Nombre: ${formData.nombre}\n` +
         `Email: ${formData.email}\n` +
@@ -356,7 +356,7 @@ const handleSubmit = (e: React.FormEvent) => {
                 icon: Brain,
                 color: "from-purple-500/20 to-pink-500/20",
                 items: [
-                  "Casos de uso específicos de IA",
+                  "Casos de uso espec��ficos de IA",
                   "Estimación de ROI por iniciativa",
                   "Roadmap de implementación",
                   "Análisis de viabilidad técnica",

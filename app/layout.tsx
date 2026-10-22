@@ -12,10 +12,42 @@ const poppins = Poppins({
   variable: "--font-display",
 })
 
+const siteUrl = "https://a-zesoria.com"
+
 export const metadata: Metadata = {
-  title: "A-ZESORIA | Consultoría Industrial con IA - 30+ Años de Experiencia",
+  metadataBase: new URL(siteUrl),
+  title: {
+    default: "A-ZESORIA | Consultoría industrial con IA",
+    template: "%s | A-ZESORIA",
+  },
   description:
-    "Diagnóstico empresarial, localización e implementación de plantas industriales y CEDIS. Soluciones de productividad con Inteligencia Artificial.",
+    "Consultoría industrial para diagnosticar operaciones, localizar plantas y CEDIS e implementar mejoras con inteligencia artificial y más de 30 años de experiencia.",
+  keywords: [
+    "consultoría industrial",
+    "diagnóstico operacional con IA",
+    "localización de plantas industriales",
+    "implementación de CEDIS",
+    "productividad industrial",
+  ],
+  applicationName: "A-ZESORIA",
+  alternates: { canonical: siteUrl },
+  openGraph: {
+    type: "website",
+    locale: "es_MX",
+    url: siteUrl,
+    siteName: "A-ZESORIA",
+    title: "A-ZESORIA | Consultoría industrial con IA",
+    description:
+      "Diagnóstico operacional, localización estratégica e implementación de plantas industriales y CEDIS.",
+    images: [{ url: "/logo.svg", alt: "A-ZESORIA" }],
+  },
+  twitter: {
+    card: "summary",
+    title: "A-ZESORIA | Consultoría industrial con IA",
+    description:
+      "Soluciones de productividad y operación industrial respaldadas por datos e inteligencia artificial.",
+  },
+  robots: { index: true, follow: true },
   generator: "v0.app",
   icons: {
     icon: [
