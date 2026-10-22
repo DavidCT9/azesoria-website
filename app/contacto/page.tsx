@@ -9,7 +9,7 @@ import { Card } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
-import { Mail, Phone, MapPin, Clock, Send, CheckCircle, MessageSquare } from "lucide-react"
+import { Mail, Phone, MapPin, Clock, Send, CheckCircle, Sparkles, MessageSquare } from "lucide-react"
 import { useState } from "react"
 
 export default function ContactoPage() {
@@ -149,9 +149,8 @@ export default function ContactoPage() {
                   <div className="space-y-8">
                     <div className="space-y-3">
                       <div className="flex items-center gap-3">
-                        <div className="relative flex h-12 w-12 shrink-0 items-center justify-center border border-accent/50 bg-accent/5">
-                          <MessageSquare className="h-6 w-6 text-accent" strokeWidth={1.5} />
-                          <span className="absolute -bottom-1 -right-1 h-2 w-2 bg-accent" aria-hidden="true" />
+                        <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center">
+                          <Sparkles className="w-6 h-6 text-accent" />
                         </div>
                         <h2 className="text-3xl font-bold text-primary font-display">Envíenos un Mensaje</h2>
                       </div>
