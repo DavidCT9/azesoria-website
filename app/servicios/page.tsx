@@ -103,20 +103,13 @@ export default function ServiciosPage() {
     <main className="min-h-screen bg-background">
       <Header />
 
-      <section className="relative pt-32 pb-20 px-4 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-accent/5 to-transparent" />
-        <div className="absolute top-20 right-10 w-72 h-72 bg-accent/20 rounded-full blur-3xl animate-pulse" />
-        <div className="absolute bottom-10 left-10 w-96 h-96 bg-primary/10 rounded-full blur-3xl animate-pulse delay-700" />
-
-        <div className="container mx-auto max-w-4xl text-center space-y-8 relative z-10">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/10 border border-accent/20">
-            <Sparkles className="w-4 h-4 text-accent" />
-            <span className="text-sm font-medium text-accent">Soluciones Empresariales Avanzadas</span>
+      <section className="border-b border-border px-5 pb-20 pt-28 lg:px-8">
+        <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[1.1fr_.9fr] lg:items-end">
+          <div className="space-y-6">
+            <p className="section-kicker">Lo que hacemos</p>
+            <h1 className="display-title max-w-3xl text-5xl font-semibold leading-[.95] text-primary md:text-7xl">Convertimos operaciones complejas en decisiones claras.</h1>
           </div>
-          <h1 className="text-5xl md:text-7xl font-bold text-primary text-balance leading-tight">Nuestros Servicios</h1>
-          <p className="text-xl text-muted-foreground leading-relaxed text-pretty max-w-2xl mx-auto">
-            Transformamos operaciones empresariales con tecnología de vanguardia y más de 30 años de experiencia
-          </p>
+          <p className="max-w-md border-l-2 border-accent pl-5 text-lg leading-8 text-muted-foreground">Más de 30 años de experiencia para encontrar la palanca que realmente mueve su operación.</p>
         </div>
       </section>
 
@@ -150,9 +143,9 @@ export default function ServiciosPage() {
               key={index}
               className={`${activeService === index ? "block animate-in fade-in slide-in-from-bottom-4 duration-700" : "hidden"}`}
             >
-              <Card className="overflow-hidden border-2 hover:border-accent/30 transition-colors">
+              <article className="overflow-hidden border-y border-border bg-card">
                 {/* Header with image */}
-                <div className={`relative h-64 bg-gradient-to-br ${service.color}`}>
+                <div className="relative h-64 bg-muted">
                   <Image
                     src={service.image || "/placeholder.svg"}
                     alt={service.title}
@@ -161,7 +154,7 @@ export default function ServiciosPage() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent" />
                   <div className="absolute bottom-6 left-6 right-6">
-                    <div className="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-accent/90 backdrop-blur-sm mb-4">
+                    <div className="inline-flex items-center justify-center w-14 h-14 border border-accent bg-accent mb-4">
                       <service.icon className="w-7 h-7 text-background" />
                     </div>
                     <h2 className="text-3xl md:text-4xl font-bold text-foreground">{service.title}</h2>
@@ -249,16 +242,13 @@ export default function ServiciosPage() {
                     </div>
                   </div>
                 </div>
-              </Card>
+              </article>
             </div>
           ))}
         </div>
       </section>
 
-      <section className="relative py-24 px-4 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary/95 to-primary/90" />
-        <div className="absolute top-0 right-0 w-96 h-96 bg-accent/20 rounded-full blur-3xl" />
-        <div className="absolute bottom-0 left-0 w-96 h-96 bg-accent/10 rounded-full blur-3xl" />
+      <section className="border-t border-border bg-primary px-5 py-24 lg:px-8">
 
         <div className="container mx-auto max-w-4xl text-center space-y-8 relative z-10">
           <h2 className="text-4xl md:text-5xl font-bold text-white text-balance">
