@@ -76,7 +76,7 @@ export default function CasosExitoPage() {
   ]
 
   return (
-    <main className="min-h-screen bg-background modern-bg accent-lines">
+    <main className="min-h-screen bg-background">
       <Header />
 
       {/* Hero Section - More engaging and modern hero */}
@@ -109,7 +109,7 @@ export default function CasosExitoPage() {
             ].map((stat, index) => (
               <Card
                 key={index}
-                className="p-8 text-center space-y-4 backdrop-blur-sm bg-card/80 border-border/50 hover:border-accent/50 hover:shadow-xl hover:shadow-accent/10 transition-all duration-300 card-modern-hover group"
+                className="border-y border-border bg-card p-8 text-center transition-colors hover:border-accent group"
               >
                 <div
                   className={`inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-br from-accent/20 to-primary/20 mx-auto transition-transform group-hover:scale-110 duration-300`}
@@ -139,7 +139,7 @@ export default function CasosExitoPage() {
 
           {casosExito.map((caso, index) => (
             <div key={index} className="relative">
-              <Card className="overflow-hidden backdrop-blur-sm bg-card/90 border-2 border-border/50 hover:border-accent/50 transition-all duration-500 shadow-lg hover:shadow-2xl hover:shadow-accent/10 card-modern-hover">
+              <Card className="overflow-hidden border-y border-border bg-card">
                 <div className="grid lg:grid-cols-2 gap-0">
                   {/* Image Side */}
                   <div className="relative h-64 lg:h-auto overflow-hidden">
@@ -248,7 +248,7 @@ export default function CasosExitoPage() {
             {industrias.map((industria, index) => (
               <Card
                 key={index}
-                className="p-8 backdrop-blur-sm bg-card/80 border-border/50 hover:border-accent/50 hover:shadow-xl hover:shadow-accent/10 transition-all duration-300 card-modern-hover group"
+                className="border-y border-border bg-card p-8 transition-colors hover:border-accent group"
               >
                 <div className="space-y-4">
                   <div className="flex items-start justify-between">

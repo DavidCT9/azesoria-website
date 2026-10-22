@@ -48,7 +48,9 @@
 }
 
 @layer utilities {
-  .site-grid { background-image: linear-gradient(to right, oklch(0.3 0.03 250 / .055) 1px, transparent 1px), linear-gradient(to bottom, oklch(0.3 0.03 250 / .055) 1px, transparent 1px); background-size: 56px 56px; }
   .eyebrow { @apply text-xs font-semibold uppercase tracking-[0.22em] text-accent; }
   .rule { @apply h-px bg-border; }
+  .section-kicker { @apply text-xs font-semibold uppercase tracking-[0.22em] text-accent; }
+  .editorial-rule { @apply border-t border-border; }
+  .display-title { @apply font-display tracking-[-0.045em]; }
 }
