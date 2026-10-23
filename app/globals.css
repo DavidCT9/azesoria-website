@@ -73,3 +73,18 @@
 @media (max-width: 767px) { .hero-geometry { opacity: .55; } .hero-geometry::before { right: -15rem; top: 3rem; } .hero-beam-one { right: 4%; top: 20%; } .hero-beam-two { right: 10%; top: 60%; } }
 @media (prefers-reduced-motion: reduce) { .hero-geometry::before, .hero-geometry::after, .hero-node, .hero-beam { animation: none; } }
 
+.nav-window { mask-image: linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent); }
+.nav-scroller { scrollbar-width: none; }
+.nav-scroller::-webkit-scrollbar { display: none; }
+.menu-line { display: block; width: 1.25rem; height: 1px; background: currentColor; transition: transform 180ms ease, opacity 180ms ease; }
+.menu-line-top-open { transform: translateY(6px) rotate(45deg); }
+.menu-line-middle-open { opacity: 0; }
+.menu-line-bottom-open { transform: translateY(-6px) rotate(-45deg); }
+.mobile-menu { display: grid; grid-template-rows: 0fr; overflow: hidden; border-top: 0 solid var(--border); opacity: 0; transition: grid-template-rows 220ms ease, opacity 180ms ease, border-top-width 220ms ease; }
+.mobile-menu > div { min-height: 0; }
+.mobile-menu-open { grid-template-rows: 1fr; border-top-width: 1px; opacity: 1; }
+.mobile-nav-link { transition: color 160ms ease, padding-left 160ms ease; }
+.mobile-nav-link:hover { color: var(--accent); padding-left: .35rem; }
+@media (min-width: 768px) and (max-width: 1100px) { .nav-scroller { justify-content: flex-start; } }
+@media (prefers-reduced-motion: reduce) { .menu-line, .mobile-menu, .mobile-nav-link { transition: none; } }
+
