@@ -28,7 +28,7 @@ export function Header() {
           Ingeniería de decisiones
         </span>
 
-        <div className="nav-window relative hidden min-w-0 flex-1 md:block" aria-label="Secciones del sitio">
+        <div className="nav-window relative hidden min-w-0 flex-1 lg:block" aria-label="Secciones del sitio">
           <div className="nav-scroller flex items-center justify-center gap-6 overflow-x-auto px-5 py-2">
             {navigation.map((item) => (
               <Link key={item.href} href={item.href} className="shrink-0 text-sm font-medium text-foreground/80 transition-colors hover:text-accent">
@@ -38,13 +38,13 @@ export function Header() {
           </div>
         </div>
 
-        <Link href="/diagnostico" className="group ml-auto hidden shrink-0 items-center gap-2 border border-primary bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground transition-colors hover:bg-accent hover:text-accent-foreground sm:inline-flex">
+        <Link href="/diagnostico" className="group ml-auto hidden shrink-0 items-center gap-2 border border-primary bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground transition-colors hover:bg-accent hover:text-accent-foreground lg:inline-flex">
           Consulta gratuita <ArrowUpRight className="h-4 w-4" />
         </Link>
 
         <button
           type="button"
-          className="menu-toggle ml-auto flex h-11 w-11 shrink-0 flex-col items-center justify-center gap-[5px] border border-primary text-primary transition-colors hover:bg-primary hover:text-primary-foreground sm:hidden"
+          className="menu-toggle ml-auto flex h-11 w-11 shrink-0 flex-col items-center justify-center gap-[5px] border border-primary text-primary transition-colors hover:bg-primary hover:text-primary-foreground lg:hidden"
           aria-expanded={menuOpen}
           aria-controls="mobile-navigation"
           aria-label={menuOpen ? "Cerrar menú" : "Abrir menú"}
