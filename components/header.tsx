@@ -59,7 +59,7 @@ export function Header() {
       <div id="mobile-navigation" className={`mobile-menu ${menuOpen ? "mobile-menu-open" : ""}`} aria-hidden={!menuOpen}>
         <div className="mx-auto max-w-7xl px-5 pb-6 pt-2">
           <div className="mb-5 flex items-center justify-between border-b border-border pb-4">
-            <span className="eyebrow">Índice de trabajo</span>
+            <span className="eyebrow">Índice</span>
             <span className="font-mono text-[10px] text-muted-foreground">A—Z / 06</span>
           </div>
           <div className="grid gap-0">
@@ -76,7 +76,7 @@ export function Header() {
             ))}
           </div>
           <Link href="/diagnostico" className="mt-6 flex items-center justify-between bg-primary px-4 py-3 text-sm font-semibold text-primary-foreground" onClick={() => setMenuOpen(false)}>
-            Hablar de un proyecto <ArrowUpRight className="h-4 w-4" />
+            Consulta gratuita <ArrowUpRight className="h-4 w-4" />
           </Link>
         </div>
       </div>
